@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RS Emporium - Premium Leather Goods Manufacturing</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "0BIJxzdMXUs4O0Yj_",
+          blockHeadless: false,
+          limitRate: {
+            throttle: 5000,
+          },
+        });
+
+        // Verify initialization
+        console.log("EmailJS initialized");
+      })();
+    </script>
+  </head>
+  <body class="gold-bg">
+    <!-- Navigation -->
+    <nav
+      class="bg-white gold-border shadow-lg fixed w-full z-50 border-b-2 rounded-b-xl"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Left Section: Hamburger on Mobile, Logo on Desktop -->
+          <div class="flex-1 md:flex-none">
+            <!-- Mobile Hamburger Button -->
+            <div class="md:hidden">
+              <button
+                id="mobile-menu-button"
+                class="p-2 inline-flex items-center justify-center text-gray-700 rounded-md focus:outline-none"
+              >
+                <span class="sr-only">Open main menu</span>
+                <svg
+                  id="hamburger-icon"
+                  class="h-6 w-6"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+                <svg
+                  id="close-icon"
+                  class="h-6 w-6 hidden"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <!-- Desktop Logo -->
+            <div class="hidden md:block">
+              <span class="text-2xl font-bold goldenrod-gradient-text uppercase"
+                >RS EMPORIUM</span
+              >
+            </div>
+          </div>
+
+          <!-- Center Section: Logo on Mobile -->
+          <div class="flex-1 flex justify-center md:hidden">
+            <span class="text-2xl font-bold goldenrod-gradient-text uppercase"
+              >RS EMPORIUM</span
+            >
+          </div>
+
+          <!-- Right Section: Desktop Links, Mobile Spacer -->
+          <div class="flex-1 flex justify-end">
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-4">
+              <a
+                href="#about"
+                class="gold hover:text-yellow-700 px-3 py-2 rounded-md text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="#services"
+                class="gold hover:text-yellow-700 px-3 py-2 rounded-md text-sm font-medium"
+                >Services</a
+              >
+              <a
+                href="#clients"
+                class="gold hover:text-yellow-700 px-3 py-2 rounded-md text-sm font-medium"
+                >Clients</a
+              >
+              <a
+                href="#portfolio"
+                class="gold hover:text-yellow-700 px-3 py-2 rounded-md text-sm font-medium"
+                >Portfolio</a
+              >
+              <a
+                href="#process"
+                class="gold hover:text-yellow-700 px-3 py-2 rounded-md text-sm font-medium"
+                >Process</a
+              >
+              <a
+                href="#contact"
+                class="gold hover:text-yellow-700 px-3 py-2 rounded-md text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+            <!-- Mobile Spacer to balance the hamburger button -->
+            <div class="md:hidden">
+              <div class="w-8 h-8"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white rounded-b-xl shadow-lg border-t gold-border"
+        >
+          <a
+            href="#about"
+            class="gold hover:text-yellow-700 block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="gold hover:text-yellow-700 block px-3 py-2 rounded-md text-base font-medium"
+            >Services</a
+          >
+          <a
+            href="#clients"
+            class="gold hover:text-yellow-700 block px-3 py-2 rounded-md text-base font-medium"
+            >Clients</a
+          >
+          <a
+            href="#portfolio"
+            class="gold hover:text-yellow-700 block px-3 py-2 rounded-md text-base font-medium"
+            >Portfolio</a
+          >
+          <a
+            href="#process"
+            class="gold hover:text-yellow-700 block px-3 py-2 rounded-md text-base font-medium"
+            >Process</a
+          >
+          <a
+            href="#contact"
+            class="gold hover:text-yellow-700 block px-3 py-2 rounded-md text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 gold-gradient-bg text-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+            Premium Leather Goods Manufacturing
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 gold">
+            Bringing your brand's vision to life with 30+ years of craftsmanship
+          </p>
+          <a
+            href="#contact"
+            class="bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 text-gray-900 px-8 py-3 rounded-lg font-semibold shadow-lg hover:from-yellow-300 hover:to-yellow-700 transition duration-300 border-2 gold-border"
+            >Start Your Project</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Your Trusted Manufacturing Partner
+          </h2>
+          <p class="text-xl text-gray-800">
+            Since 1990, We've Been Crafting Premium Leather Goods for Renowned
+            Brands
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">
+              Expert Craftsmanship
+            </h3>
+            <p class="text-gray-800">
+              30+ Years of Experience in Leather Goods Manufacturing with
+              Skilled Artisans
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">
+              Quality Materials
+            </h3>
+            <p class="text-gray-800">
+              Working with Genuine Leather, Vegan Leather, Full-Grain, and
+              Top-Grain Materials
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">
+              Production Capacity
+            </h3>
+            <p class="text-gray-800">
+              700-800 Bags Per Month with Flexible Scaling Options
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 gold-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Our Manufacturing Services
+          </h2>
+          <p class="text-xl text-gray-800">
+            End-to-End Manufacturing Support for Your Brand
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">
+              Product Range
+            </h3>
+            <ul class="space-y-3 text-gray-800">
+              <li>• Laptop Bags</li>
+              <li>• Duffle Bags</li>
+              <li>• Sling Bags</li>
+              <li>• Purses</li>
+              <li>• Custom Designs</li>
+            </ul>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">
+              Our Commitment
+            </h3>
+            <ul class="space-y-3 text-gray-800">
+              <li>• Quality Assurance</li>
+              <li>• Timely Delivery</li>
+              <li>• Brand Alignment</li>
+              <li>• Material Flexibility</li>
+              <li>• Sample Production</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Clients Section -->
+    <section id="clients" class="py-20 gold-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold gold mb-12 text-center">Our Clients</h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-center"
+        >
+          <!-- The Clownfish -->
+          <div
+            class="flex flex-col items-center text-center bg-white rounded-lg shadow-lg p-8 gold-border"
+          >
+            <img
+              src="The Clownfish.png"
+              alt="The Clownfish Logo"
+              class="h-28 mb-6 object-contain"
+            />
+            <h3 class="text-xl font-semibold mb-2 gold">The Clownfish</h3>
+            <p class="text-gray-800 max-w-md">
+              Renowned for Premium Quality and On-Time Delivery Praised by Their
+              Design Team.
+            </p>
+          </div>
+          <!-- Esbeda -->
+          <div
+            class="flex flex-col items-center text-center bg-white rounded-lg shadow-lg p-8 gold-border"
+          >
+            <img
+              src="Esbeda.png"
+              alt="Esbeda Logo"
+              class="h-28 mb-6 object-contain"
+            />
+            <h3 class="text-xl font-semibold mb-2 gold">Esbeda</h3>
+            <p class="text-gray-800 max-w-md">
+              Celebrated for Craftsmanship and Flexible Production Accommodating
+              Evolving Collections.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Portfolio</h2>
+          <p class="text-xl text-gray-800">
+            A Showcase of Bags Crafted for Our Clients
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        >
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="B2.jpg"
+              alt="Black leather laptop bag with front pockets"
+              class="w-full h-100 object-cover portfolio-image"
+            />
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="B5.jpg"
+              alt="Brown leather handbag with double zippers"
+              class="w-full h-100 object-cover portfolio-image"
+            />
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="B6.jpg"
+              alt="Floral fabric handbag with brown leather accents"
+              class="w-full h-100 object-cover portfolio-image"
+            />
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="B4.jpg"
+              alt="Floral fabric duffle bag with tan leather handles"
+              class="w-full h-80 object-cover portfolio-image"
+            />
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="B1.jpg"
+              alt="Brown crocodile-texture duffle bag"
+              class="w-full h-100 object-cover portfolio-image"
+            />
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="B7.jpg"
+              alt="Classic brown leather laptop bag"
+              class="w-full h-100 object-cover portfolio-image"
+            />
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="B9.jpg"
+              alt="Brown vegan leather laptop bag with front pocket"
+              class="w-full h-100 object-cover portfolio-image"
+            />
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="B8.jpg"
+              alt="Floral fabric handbag with tan leather trim"
+              class="w-full h-100 object-cover portfolio-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 gold-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Our Manufacturing Process
+          </h2>
+          <p class="text-xl text-gray-800">
+            From Design to Delivery, We Ensure Excellence at Every Step
+          </p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-semibold mb-4 text-gray-900">
+                1. Design Review
+              </h3>
+              <p class="text-gray-800">Understanding Your Requirements</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-semibold mb-4 text-gray-900">
+                2. Sample Creation
+              </h3>
+              <p class="text-gray-800">
+                Crafting a Prototype for Your Approval
+              </p>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-semibold mb-4 text-gray-900">
+                3. Production
+              </h3>
+              <p class="text-gray-800">Manufacturing with Precision and Care</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-semibold mb-4 text-gray-900">
+                4. Quality Check
+              </h3>
+              <p class="text-gray-800">
+                Rigorous Quality Control Before Delivery
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gold-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="get-in-touch mb-16">Get In Touch</h2>
+
+        <!-- Contact Form -->
+        <div class="max-w-2xl mx-auto mb-24">
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900 text-center">
+              Send us a Message
+            </h3>
+            <form id="contactForm" novalidate>
+              <div class="mb-6">
+                <label class="block text-gray-900 mb-2" for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-gray-500 text-gray-900"
+                  placeholder="Your name"
+                />
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-900 mb-2" for="email"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-gray-500 text-gray-900"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-900 mb-2" for="message"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-gray-500 text-gray-900"
+                  placeholder="Your message here..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-center mb-12 text-gray-900">
+          Or Contact Us Directly
+        </h3>
+
+        <!-- Contact Cards -->
+        <div class="contact-cards">
+          <!-- Phone Card -->
+          <div class="contact-card">
+            <svg
+              class="contact-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+            <h3 class="contact-title">Phone</h3>
+            <p class="contact-info">
+              <a href="tel:+919322419368">+91 9322419368</a>
+            </p>
+          </div>
+
+          <!-- Email Card -->
+          <div class="contact-card">
+            <svg
+              class="contact-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            <h3 class="contact-title">Email</h3>
+            <p class="contact-info">
+              <a href="mailto:karimuddinshaikh798@gmail.com"
+                >karimuddinshaikh798@gmail.com</a
+              >
+            </p>
+          </div>
+
+          <!-- Address Card -->
+          <div class="contact-card">
+            <svg
+              class="contact-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            <h3 class="contact-title">Address</h3>
+            <p class="contact-info">
+              Dhour Chawl, Room No. 2,<br />
+              Arab Galy, 19-D, Bapty Road,<br />
+              Mumbai - 400008
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h3 class="text-2xl font-bold mb-4">RS EMPORIUM</h3>
+          <p class="text-gray-400">Premium Leather Goods Manufacturing</p>
+          <p class="text-gray-400 mt-4">
+            © 2025 RS EMPORIUM. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div class="modal-overlay" id="imageModal">
+      <div class="modal-content">
+        <img src="" alt="" class="modal-image" id="modalImage" />
+      </div>
+      <div class="modal-close" onclick="closeModal()">×</div>
+    </div>
+
+    <!-- Thank You Modal -->
+    <div class="modal-overlay" id="thankYouOverlay">
+      <div class="thank-you-modal">
+        <svg
+          class="success-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <h3>Thank You!</h3>
+        <p>
+          Your Message Has Been Sent Successfully. We'll Get Back to You Soon.
+        </p>
+        <button onclick="closeThankYouModal()">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
