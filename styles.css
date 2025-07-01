@@ -358,3 +358,13 @@ body:focus {
 .thank-you-modal button:hover {
   background: #2d3748;
 }
+
+/* Remove carousel sliding animation for instant image switch */
+.carousel-slide,
+.carousel-slide-next,
+.carousel-slide-prev,
+.carousel-slide-active {
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
